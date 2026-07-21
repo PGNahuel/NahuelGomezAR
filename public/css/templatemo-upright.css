@@ -570,9 +570,7 @@ figure.effect-honey:hover ul li a {
 }
 
 .fab { transition: all 0.3s ease; }
-.tm-social-link:hover{
 
-}
 .tm-social-link:hover .fa-instagram { 
 	background-color:#8134AF;
 	color: #fafafa; 
@@ -605,6 +603,12 @@ figure.effect-honey:hover ul li a {
 }
 .tm-social-link:hover .fa-podcast { 
 	background-color: #ff8310; 
+	color: #fafafa; 
+	padding:5px;
+	border-radius: 10px;
+}
+.tm-social-link:hover .fa-github { 
+	background-color: #010409; 
 	color: #fafafa; 
 	padding:5px;
 	border-radius: 10px;
