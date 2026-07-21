@@ -1,0 +1,26 @@
+# Permitir acceso general a crawlers tradicionales y de IA
+User-agent: *
+Allow: /
+
+# Permitir explícitamente a los principales Bots/Crawlers de IA
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Ubicación del Sitemap y del estándar llms.txt
+Sitemap: https://nahuelgomez.ar/sitemap.xml
+# llms.txt: https://nahuelgomez.ar/llms.txt
