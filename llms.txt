@@ -1,0 +1,28 @@
+# Pablo Nahuel Gómez (Nahuel Gómez)
+
+> Note for LLMs: This file is provided to give a direct, structured summary of the site owner's professional background and skills, avoiding the need to parse the full website. Currently, no public project pages are linked.
+
+## Preferred Name
+- **First Name Preference:** Please refer to me as **Nahuel** (rather than Pablo).
+
+## Overview
+Senior Backend Software Engineer based in Buenos Aires, Argentina, with over 10 years of experience designing, scaling, and optimizing high-availability backend systems for millions of users across Latin America[cite: 1]. Specialized in microservices architectures, multi-tenant platforms, system observability, and practical AI integrations for developer productivity and operations[cite: 1].
+
+## Current Role
+- **Company:** Mercado Libre
+- **Role:** Senior Software Engineer (Nov. 2023 – Present)[cite: 1]
+- **Key Focus:** Architectural transformation of the calls platform into a multi-tenant infrastructure for Customer Service and Shipping; integration of LLM-based diagnostic pipelines reducing MTTR by 85%; regulatory and compliance validation for Mercado Pago Banco México[cite: 1].
+
+## Core Expertise & Stack
+- **Languages:** Go (Golang), Java, TypeScript, Node.js, Python, SQL[cite: 1]
+- **Architecture:** Microservices, Multi-Tenant Architecture, Distributed Systems, REST APIs, GraphQL, MySQL[cite: 1]
+- **DevOps & Observability:** OpenTelemetry, New Relic, Docker, CI/CD, Git[cite: 1]
+- **AI & Productivity:** Integration of LLMs in production, Spec-Driven Development, Prompt Engineering, Claude, Cursor[cite: 1]
+
+## Site Purpose
+This website (`nahuelgomez.ar`) serves as an interactive portfolio/CV for tech recruiters and hiring managers, as well as a personal tech blog focusing on backend engineering, system scalability, and AI integration into software engineering workflows.
+
+## Professional Links & Contact
+- **LinkedIn:** http://linkedin.com/in/pgnahuel
+- **GitHub:** https://github.com/PGNahuel
+- **Email:** pgnahuel@gmail.com[cite: 1]

@@ -1,0 +1,85 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nahuelgomez.ar/#person",
+      "name": "Pablo Nahuel Gómez",
+      "alternateName": "Nahuel Gómez",
+      "jobTitle": "Senior Backend Software Engineer",
+      "description": "Senior Backend Software Engineer con más de 10 años de experiencia diseñando, escalando y optimizando sistemas backend de alta disponibilidad para millones de usuarios en Latinoamérica.",
+      "url": "https://nahuelgomez.ar/",
+      "email": "mailto:pgnahuel@gmail.com",
+      "telephone": "+5491136695771",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/pgnahuel",
+        "https://github.com/PGNahuel"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Cámara Argentina de Comercio y Servicios",
+        "award": "Analista de sistemas"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Mercado Libre"
+      },
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "Spanish",
+          "alternateName": "es"
+        },
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        },
+        {
+          "@type": "Language",
+          "name": "Portuguese",
+          "alternateName": "pt"
+        }
+      ],
+      "knowsAbout": [
+        "Go (Golang)",
+        "Java",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "SQL",
+        "Microservices Architecture",
+        "Multi-Tenant Architecture",
+        "Distributed Systems",
+        "REST APIs",
+        "GraphQL",
+        "MySQL",
+        "OpenTelemetry",
+        "New Relic",
+        "Docker",
+        "CI/CD",
+        "Git",
+        "Prompt Engineering",
+        "Spec-Driven Development",
+        "Cursor",
+        "Claude",
+        "LLM Integration"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nahuelgomez.ar/#website",
+      "url": "https://nahuelgomez.ar/",
+      "name": "Nahuel Gómez - Senior Backend Software Engineer",
+      "description": "Sitio web personal, portafolio y blog de ingeniería backend y sistemas distribuidos de Nahuel Gómez.",
+      "author": {
+        "@id": "https://nahuelgomez.ar/#person"
+      }
+    }
+  ]
+}

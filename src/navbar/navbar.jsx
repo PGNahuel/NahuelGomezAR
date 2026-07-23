@@ -28,14 +28,14 @@ export default function Navigator({ Unload }) {
                         <NavBarItem description={t("MAIN_CONTENT")} icon="fa-home" href="#home" onClick={() => Unload("#home")} />
                         <NavBarItem description={t("ARTICLES")} icon="fa-user-friends" href="#articles" onClick={() => Unload("#articles")} />
                         <NavBarItem description={t("CONTACT")} icon="fa-envelope" href="#contact" onClick={() => Unload("#contact")} />
+                        <NavBarItem description={t("CV")} icon="fa-file-pdf" blank="true" href="/CV_Nahuel_Gomez_Senior_Backend_Engineer.pdf" onClick={() => {}} />
                     </ul>
                 </div>
                 <div className="social-links">
                     <a target="_blank" href="https://x.com/NachoPNG" className="tm-social-link"><i className="fab fa-twitter"></i></a>
-                    <a target="_blank" href="https://instagram.com/_nacho.png" className="tm-social-link"><i className="fab fa-instagram"></i></a>
-                    <a target="_blank" href="https://youtube.com/NahuelGomez94" className="tm-social-link"><i className="fab fa-youtube"></i></a>
-                    <a target="_blank" href="https://www.linkedin.com/in/nahuel-g%C3%B3mez-a869617b" className="tm-social-link"><i className="fab fa-linkedin"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/pgnahuel" className="tm-social-link"><i className="fab fa-linkedin"></i></a>
                     <a target="_blank" href="https://www.ivoox.com/escuchar-audios-nahuel-gomez_al_15792872_1.html" className="tm-social-link"><i className="fa fa-podcast"></i></a>
+                    <a target="_blank" href="https://github.com/pgnahuel" className="tm-social-link"><i className="fab fa-github"></i></a>
                 </div>
             </nav>
 

@@ -88,7 +88,7 @@ function AppContent() {
   const id = searchParams.get('id');
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" id="home">
       <div className="row">
         <Navigator Unload={volverALista} />
         <div className="tm-main">

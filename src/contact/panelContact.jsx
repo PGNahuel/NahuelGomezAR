@@ -3,8 +3,7 @@ import FormContact from "./form";
 import t from "./../resources/translate"
 
 const PanelContact = (props) =>{
-    const mapJoseMarmol = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13107.053242930078!2d-58.38071122631427!3d-34.786733393364905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd346291b7ef7%3A0x44b74d34162ac098!2sB1845%20Jos%C3%A9%20Marmol%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1745258660104!5m2!1ses-419!2sar";
-
+    const mapJoseMarmol = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d382617.3199213441!2d-58.632208252009555!3d-34.56557698360964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb3faddba8be7%3A0x93e8f54e16d05cc5!2sBuenos%20Aires%20Metropolitan%20Area!5e0!3m2!1ses-419!2sar!4v1784664611263!5m2!1ses-419!2sar"
     const title = props.title ? props.title : t("CONTACT");
 
     return (
