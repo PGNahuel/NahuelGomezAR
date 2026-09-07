@@ -1,6 +1,7 @@
 .footer{
     padding:10px 0;
     border-top:2px solid #e1e1ff;
+    background-color:white;
 }
 
 .share-button{
@@ -119,9 +120,11 @@
         }
 
 .articuleTags{
-    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-top: 2px solid #e1e1ff;
     text-align: center;
+    background-color:white;
 }
 
 .articuleTags .tag{
@@ -132,4 +135,44 @@
     margin:2px 5px;
     border-radius: 3px;
     font-size: 0.7rem;
+}
+
+body{
+    background-color: #f5f5f5;
+}
+
+
+
+.maincontent{
+	margin-left:20px;
+	padding:15px;
+	max-width:1100px;
+	text-align: justify;
+}
+
+.maincontent .banner{
+	width: 100%;
+	max-height: 250px;
+	overflow: hidden;
+	margin-bottom:30px;
+	background-color: white;
+  }
+  
+  .banner img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	max-height: 250px;
+  }
+
+.maincontent .principalcontent{
+	background-color: white;
+	padding:5px 10px;
+}
+
+@media (min-width:990px){
+	.maincontent{
+		padding-left:280px;
+		margin:auto;
+	}
 }

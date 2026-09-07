@@ -80,7 +80,7 @@ export default function DetailContent({ Id, Articulo, Volver }) {
                         alt={contenido.Title}
                     />
                 </div>
-                <div>
+                <div className="principalcontent">
                     <h2 className="tm-text-primary" id="articles">{contenido.Title}</h2>
                     <hr className="mb-5" />
                     <div 
