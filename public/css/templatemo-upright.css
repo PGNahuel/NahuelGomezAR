@@ -860,6 +860,8 @@ select:not([multiple]) {
 	margin-left:20px;
 	background-color: white;
 	padding:15px;
+	max-width:1100px;
+	text-align: justify;
 }
 
 .maincontent .banner{
@@ -878,6 +880,9 @@ select:not([multiple]) {
 
 @media (min-width:990px){
 	.maincontent{
-		margin-left:280px;
+		padding-left:280px;
+		margin:auto;
 	}
+
+	
 }
