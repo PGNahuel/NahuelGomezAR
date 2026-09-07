@@ -62,7 +62,8 @@ async function importMarkdownByID(id) {
                 title: f.title,
                 author: f.author,
                 content: htmleado,
-                img: f.img
+                img: f.img,
+                tags: f.tags || []
             };
         }));
 

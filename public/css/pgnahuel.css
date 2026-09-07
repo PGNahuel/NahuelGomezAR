@@ -117,3 +117,19 @@
                 height: 150px;
             }
         }
+
+.articuleTags{
+    margin-top: 20px;
+    border-top: 2px solid #e1e1ff;
+    text-align: center;
+}
+
+.articuleTags .tag{
+    display: inline-block;
+    background-color: #e1e1ff;     
+    color: #006699;
+    padding: 5px 10px;
+    margin:2px 5px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+}

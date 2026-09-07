@@ -7,7 +7,8 @@ export default function DetailContent({ Id, Articulo, Volver }) {
         Cargando: true,
         Title: "",
         Content: "",
-        Img: "default.webp"
+        Img: "default.webp",
+        Tags: []
     });
 
     useEffect(() => {
@@ -16,12 +17,14 @@ export default function DetailContent({ Id, Articulo, Volver }) {
         if (!Articulo) {
             importer.importMarkdownByID(Id)
                 .then((articulo) => {
+                    console.log(articulo);
                     const articuloFormatted = {
                         Img: articulo.img,
                         Title: articulo.title,
                         Content: articulo.content,
                         Id: articulo.id,
-                        Author: articulo.author
+                        Author: articulo.author,
+                        Tags: articulo.tags || []
                     }
 
                     window.document.title = "Nahuel Gómez | " + articuloFormatted.Title;
@@ -84,6 +87,11 @@ export default function DetailContent({ Id, Articulo, Volver }) {
                         className="detail-content" 
                         dangerouslySetInnerHTML={{ __html: contenido.Content }} 
                     />
+                </div>
+                <div className="articuleTags">
+                    {contenido.Tags && contenido.Tags.map((tag, index) => (
+                        <span key={index} className="tag">{tag}</span>
+                    ))}
                 </div>
                 <div className="footer">
                     {(() => {

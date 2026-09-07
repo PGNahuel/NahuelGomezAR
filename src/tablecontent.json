@@ -1,7 +1,42 @@
 [
-    {"id":"observability","title":"Conociendo la observabilidad", "file":"observability.md", "author":"Nahuel Gómez", "img":"observability.webp"},
-    {"id":"personal-experience","title":"Mi experiencia profesional", "file":"exp.md", "author":"Nahuel Gómez", "img":"codeando.webp"},
-    {"id":"codificacion-documentacion","title":"Codificación prolija y documentación", "file":"neat_coding.md", "author":"Nahuel Gómez", "img":"relatando.webp"},
-    {"id":"pensar-abstracciones","title":"Pensar en abstracciones: una forma más sana de programar", "file":"think_abstract.md", "author":"Nahuel Gómez", "img":"podcaster.webp"},
-    {"id":"mi-libro","title":"Mi libro: Código del alma", "file":"mybook.md", "author":"Nahuel Gómez", "img":"news.webp"}
+    {
+        "id": "observability",
+        "title": "Conociendo la observabilidad",
+        "file": "observability.md",
+        "author": "Nahuel Gómez",
+        "img": "observability.webp",
+        "tags": ["Observabilidad","Desarrollo de Software","Monitoreo","Logs","Métricas","Trazas","Microservicios","Buenas Prácticas"]
+    },
+    {
+        "id": "personal-experience",
+        "title": "Mi experiencia profesional",
+        "file": "exp.md",
+        "author": "Nahuel Gómez",
+        "img": "codeando.webp",
+        "tags": ["Experiencia Profesional","Software Engineering","Desarrollo Backend","Habilidades Blandas"]
+    },
+    {
+        "id": "codificacion-documentacion",
+        "title": "Codificación prolija y documentación",
+        "file": "neat_coding.md",
+        "author": "Nahuel Gómez",
+        "img": "relatando.webp",
+        "tags": ["Clean Code","Documentación","Principios SOLID","Buenas Prácticas","Refactorización","Patrones de Diseño","Swagger","ADR","Testing"]
+    },
+    {
+        "id": "pensar-abstracciones",
+        "title": "Pensar en abstracciones: una forma más sana de programar",
+        "file": "think_abstract.md",
+        "author": "Nahuel Gómez",
+        "img": "podcaster.webp",
+        "tags": ["Abstracciones","Clean Code","Principios SOLID","Patrones de Diseño","Arquitectura de Software","Interfaz","Reutilización de Código","Mantenibilidad"]
+    },
+    {
+        "id": "mi-libro",
+        "title": "Mi libro: Código del alma",
+        "file": "mybook.md",
+        "author": "Nahuel Gómez",
+        "img": "news.webp",
+        "tags": ["Código del alma","Experiencia Personal","Reflexión","Paternidad","Desarrollo Personal","Libros y Escritos"]
+     }
 ]
