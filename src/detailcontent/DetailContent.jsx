@@ -88,12 +88,22 @@ export default function DetailContent({ Id, Articulo, Volver }) {
                 <div className="footer">
                     {(() => {
                         const baseUrl = window.location.origin + window.location.pathname + '?id=' + encodeURIComponent(contenido.Id || Id);
-                        const text = `Mirá lo que publico @NachoPNG! Estoy seguro te va a interesar... ${baseUrl}`;
+                        const text = `¡Mirá lo que publicó @NachoPNG! Estoy seguro que te va a interesar: ${baseUrl}`;
                         const tweetUrl =
                             'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text);
                         return (
                             <a href={tweetUrl} target="_blank" rel="noopener noreferrer" className="share-button">
                                 Compartir en X
+                            </a>
+                        );
+                    })()}
+
+                    {(() => {
+                        const baseUrl = window.location.origin + window.location.pathname + '?id=' + encodeURIComponent(contenido.Id || Id);
+                        const linkedinUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(baseUrl);
+                        return (
+                            <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="share-button">
+                                Compartir en <span className="fab fa-linkedin"></span> LinkedIn
                             </a>
                         );
                     })()}
