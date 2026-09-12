@@ -39,4 +39,12 @@
         "img": "news.webp",
         "tags": ["Código del alma","Experiencia Personal","Reflexión","Paternidad","Desarrollo Personal","Libros y Escritos"]
      }
+     ,    {
+        "id": "planification",
+        "title": "Planificación en el desarrollo de software",
+        "file": "planification.md",
+        "author": "Nahuel Gómez",
+        "img": "planning.webp",
+        "tags": ["Planificación","Desarrollo de Software","Gestión de Proyectos","Metodologías Agiles","Scrum","Kanban"]
+    }
 ]

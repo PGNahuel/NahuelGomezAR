@@ -28,9 +28,20 @@
 .detail-content h1{
     display:none;
 }
-.detail-content h2, .detail-content h3, .detail-content h4{
+.detail-content h2 {
     color:#006699;
     font-size: 1.5rem;
+}
+.detail-content h3{
+    color:#006699;
+    font-size: 1rem;
+    font-style: italic;
+}
+.detail-content h4{
+    color:#006699;
+    font-size: 0.8rem;
+    font-style: italic;
+
 }
 
 .detail-content img{
@@ -175,4 +186,13 @@ body{
 		padding-left:280px;
 		margin:auto;
 	}
+}
+
+blockquote p{
+    border-left: 4px solid #006699;
+    padding: 10px 10px;
+    background-color: #54a4cc;
+    font-style: italic;
+    color:white;
+    font-size:0.9rem;
 }
