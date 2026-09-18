@@ -1,6 +1,6 @@
 # Planificación en software
 
-Muchos desarrolladores de software hoy en día se saltean este paso crucial en la vida del software, sin embargo ¿Qué pensarías si te digo que es el paso MÁS importante de todos? Que si, que si, pensar una funcionalidad nueva, un cambio en un botón, implementar esa caché que mejora la performance de todo, cambiar a una nueva tecnología para producir el efecto "WoW" puede sonar tentador e incluso más rápido que planificarlo antes ¿Realmente sabemos si esos cambios nos llevará a buen puerto?
+Muchos desarrolladores de software hoy en día se saltean este paso crucial en la vida del software, sin embargo ¿Qué pensarías si te digo que es el paso MÁS importante de todos? Que si, pensar una funcionalidad nueva, un cambio en un botón, implementar esa caché que mejora la performance de todo, cambiar a una nueva tecnología para producir el efecto "WoW" puede sonar tentador e incluso más rápido que planificarlo antes ¿Realmente sabemos si esos cambios nos llevará a buen puerto?
 
 Todos podemos planificar cosas y nunca va a ser una igual a la otra. No es lo mismo planificar una escapada de fin de semana que unas vacaciones de noventa días recorriendo Europa de mochilero. Con esa premisa, tampoco es lo mismo planificar un MVP para evaluar como reacciona un nicho en particular, que planificar un cambio arquitectónico de un sistema bancario legacy que solo Dios y el binario compilado saben como funcionan.
 
@@ -187,3 +187,20 @@ Y no te confundas, un hito no es un objetivo. El objetivo puede ser algo tangibl
 Es ese momento de reflexión donde alguien dice "*a partir de este momento...*" seguido de las noticias.
 
 En conclusión, planificar los hitos es para marcar los checkpoints, los puntos de control críticos en el tiempo. Dan visibilidad y estructura del proyecto a lo largo del tiempo, permitiendo visualizar el progreso general sin entrar a detalle operativo diario; alinean al equipo y stakeholders ya que marcan expectativas claras y metas comunes para todos; permiten la gestión de riesgos temprana ya que al estar planificado puede cumplirse o retrasarse, detectando desvíos a tiempo y ejecutando medidas correctivas antes que se explote todo por los aires; ofrecen una sensación de logro tangible al equipo tras superar una etapa compleja y mantiene la moral alta.  
+
+## Conclusiones finales
+
+La planificación de un proyecto, sea de software o de cualquier otra índole, puede tener muchos pasos y formas de plantear el desarrollo a lo largo del tiempo que dure ese proyecto. En todos los casos es una herramienta demasiado valiosa que no debería ser ignorada, aún cuando ignorarla pueda dar esa falsa sensación de agilidad.
+
+Se sabe que ninguna planificación es perfecta, en especial cuando el proyecto es largo y los involucrados o recursos varían en el tiempo. Sin embargo, aún en esa imperfección, **podemos tener un marco de trabajo bien definido desde el inicio simplemente haciendo una cosa: planificando un poco más allá del camino feliz**.
+
+La tarea de sentarse a planificar puede que no sea de una única persona, a veces hay equipos enteros ideando todo. Pero siempre una persona es la responsable de completar un paso más en la creación del plan o en la ejecución del mismo. Como consejo profesional para vos, te diría que tengas en cuenta siempre todos los puntos:
+
+- Fíjate qué alcance tiene lo que van a hacer, para no trabajar de más y para levantar la mano cuando las expectativas de alguien supere lo planificado.  
+- No pierdas de vista el objetivo que tienen, es fácil desviarse cuando la motivación está a tope.  
+- Que alguien plantee alguna novedad no significa que sea viable, está bien preguntar, investigar y entrometerse cuando se sospecha de que algo puede no ser viable o demasiado costoso.  
+- Los tiempos y esfuerzos necesarios para completar la tarea. Este punto es importante de revisar antes de arrancar a hacer algo, si la planificación dice 2 horas pero a simple vista son 2 semanas, hay que levantar la mano y avisar. Esa acción reduce el estrés el 90% de las veces.  
+- Nunca veas solamente el camino feliz, tampoco caigas en el "después vemos que pasa". Pensá un momento qué puede salir mal, documentalo. No hace falta que le dediques mucho tiempo, simplemente recordá que las cosas malas pasan.  
+- ¡Visibiliza avances\! Aunque no sean un hito del proyecto, cada paso que das, para vos debería ser un hito. Para quienes te rodean es algo cada vez más tangible y para los interesados es un paso más cerca del objetivo real. Si no les importa, que chupen limón, vos ponete contento por los avances.
+
+Hay un fenómeno llamado Parálisis por análisis, si este artículo de golpe te hizo sentir que hay muchas cosas que hacer, tenes que saber que no todas las cosas requieren tanto nivel de detalle. Planifica, lee la planificación, cuestionala, ajustala y **ejecuta**.
