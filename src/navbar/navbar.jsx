@@ -1,9 +1,16 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import NavBarItem from "./items";
 import t from "./../resources/translate";
-import $ from "jquery"
 
 export default function Navigator({ Unload }) {
+    const [theme, setTheme] = useState(() => {
+        const savedTheme = window.localStorage.getItem("theme");
+        if (savedTheme === "light" || savedTheme === "dark") {
+            return savedTheme;
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    });
+
     useEffect(()=>{
         const navbarToggler = document.querySelector(".navbar-toggler");
         const newNavbarToggler = navbarToggler.cloneNode(true);
@@ -14,6 +21,18 @@ export default function Navigator({ Unload }) {
             e.stopPropagation();
         });
     },[]);
+
+    useEffect(() => {
+        document.documentElement.dataset.theme = theme;
+        window.localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme((currentTheme) => currentTheme === "dark" ? "light" : "dark");
+    };
+
+    const isDarkTheme = theme === "dark";
+
     return (
         <div id="tm-sidebar" className="tm-sidebar">
             <nav className="tm-nav">
@@ -29,6 +48,9 @@ export default function Navigator({ Unload }) {
                         <NavBarItem description={t("ARTICLES")} icon="fa-user-friends" href="#articles" onClick={() => Unload("#articles")} />
                         <NavBarItem description={t("CONTACT")} icon="fa-envelope" href="#contact" onClick={() => Unload("#contact")} />
                         <NavBarItem description={t("CV")} icon="fa-file-pdf" blank="true" href="/CV_Nahuel_Gomez_Senior_Backend_Engineer.pdf" onClick={() => {}} />
+                        <NavBarItem description="Modo" icon={isDarkTheme ? "fa-sun" : "fa-moon"} onClick={toggleTheme}
+                        aria-pressed={isDarkTheme}
+                        aria-label={isDarkTheme ? "Activar modo claro" : "Activar modo oscuro"}/>
                     </ul>
                 </div>
                 <div className="social-links">
