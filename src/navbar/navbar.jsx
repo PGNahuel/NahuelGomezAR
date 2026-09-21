@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavBarItem from "./items";
 import t from "./../resources/translate";
 
 export default function Navigator({ Unload }) {
+    const sidebarRef = useRef(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
     const [theme, setTheme] = useState(() => {
         const savedTheme = window.localStorage.getItem("theme");
         if (savedTheme === "light" || savedTheme === "dark") {
@@ -11,16 +14,18 @@ export default function Navigator({ Unload }) {
         return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     });
 
-    useEffect(()=>{
-        const navbarToggler = document.querySelector(".navbar-toggler");
-        const newNavbarToggler = navbarToggler.cloneNode(true);
-        navbarToggler.parentNode.replaceChild(newNavbarToggler, navbarToggler);
+    useEffect(() => {
+        const closeMenuOnOutsidePress = (event) => {
+            const togglerIsVisible = window.matchMedia("(max-width: 991px)").matches;
 
-        newNavbarToggler.addEventListener("click", function(e) {
-            document.querySelector(".tm-sidebar").classList.toggle("show");
-            e.stopPropagation();
-        });
-    },[]);
+            if (isMenuOpen && togglerIsVisible && !sidebarRef.current?.contains(event.target)) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        document.addEventListener("pointerdown", closeMenuOnOutsidePress);
+        return () => document.removeEventListener("pointerdown", closeMenuOnOutsidePress);
+    }, [isMenuOpen]);
 
     useEffect(() => {
         document.documentElement.dataset.theme = theme;
@@ -34,9 +39,15 @@ export default function Navigator({ Unload }) {
     const isDarkTheme = theme === "dark";
 
     return (
-        <div id="tm-sidebar" className="tm-sidebar">
+        <div id="tm-sidebar" ref={sidebarRef} className={`tm-sidebar${isMenuOpen ? " show" : ""}`}>
             <nav className="tm-nav">
-                <button className="navbar-toggler" type="button" aria-label="Toggle navigation">
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    aria-label="Toggle navigation"
+                    aria-expanded={isMenuOpen}
+                    onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+                >
                     <i className="fas fa-bars"></i>
                 </button>
                 <div>
