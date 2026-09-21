@@ -1,123 +1,68 @@
-import React, { useEffect, useState } from "react";
-import importer from "../listproject/ImporterMD";
-import mermaid from 'mermaid';
+import React, { useMemo, useRef } from "react";
+import ReadingProgress from "./ReadingProgress";
+import useArticleContent from "./hooks/useArticleContent";
+import useMermaidDiagrams from "./hooks/useMermaidDiagrams";
+import useReadingProgress from "./hooks/useReadingProgress";
 
 export default function DetailContent({ Id, Articulo, Volver }) {
-    const [contenido, setContenido] = useState({
-        Cargando: true,
-        Title: "",
-        Content: "",
-        Img: "default.webp",
-        Tags: []
-    });
+    const articleContentRef = useRef(null);
+    const contenido = useArticleContent(Id, Articulo);
+    const articleMarkup = useMemo(
+        () => ({ __html: contenido.Content }),
+        [contenido.Content]
+    );
 
-    useEffect(() => {
-        mermaid.initialize({ startOnLoad: false });
-        
-        if (!Articulo) {
-            importer.importMarkdownByID(Id)
-                .then((articulo) => {
-                    console.log(articulo);
-                    const articuloFormatted = {
-                        Img: articulo.img,
-                        Title: articulo.title,
-                        Content: articulo.content,
-                        Id: articulo.id,
-                        Author: articulo.author,
-                        Tags: articulo.tags || []
-                    }
-
-                    window.document.title = "Nahuel Gómez | " + articuloFormatted.Title;
-                    window.history.replaceState(null, articuloFormatted.Title, "/?id=" + articuloFormatted.Id);
-
-                    setContenido({
-                        ...articuloFormatted,
-                        Cargando: false
-                    });
-                    
-                    setTimeout(() => {
-                        mermaid.run({
-                            nodes: [...document.getElementsByClassName("mermaid")],
-                        });
-                    }, 100);
-                })
-                .catch((c) => {
-                    console.log(c);
-                    setContenido({
-                        Cargando: false,
-                        Error: true,
-                        Title: "Error al cargar",
-                        Content: "No se pudo cargar el artículo solicitado"
-                    });
-                });
-        } else {
-            setContenido({
-                ...Articulo,
-                Cargando: false
-            });
-            
-            setTimeout(() => {
-                mermaid.run({
-                    nodes: [...document.getElementsByClassName("mermaid")],
-                });
-            }, 100);
-        }
-    }, [Id, Articulo]); 
+    useMermaidDiagrams(articleContentRef, contenido.Cargando, contenido.Content);
+    const readingProgress = useReadingProgress(
+        articleContentRef,
+        contenido.Cargando,
+        contenido.Content
+    );
 
     if (contenido.Cargando) {
-        return (
-            <div className="maincontent">
-                Cargando...
-            </div>
-        );
-    } else {
-        return (
-            <div className="maincontent">
-                <div className="banner">
-                    <img 
-                        className="contentbanner" 
-                        src={"/img/img-" + contenido.Img} 
-                        alt={contenido.Title}
-                    />
-                </div>
-                <div className="principalcontent">
-                    <h2 className="tm-text-primary" id="articles">{contenido.Title}</h2>
-                    <hr className="mb-5" />
-                    <div 
-                        className="detail-content" 
-                        dangerouslySetInnerHTML={{ __html: contenido.Content }} 
-                    />
-                </div>
-                <div className="articuleTags">
-                    {contenido.Tags && contenido.Tags.map((tag, index) => (
-                        <span key={index} className="tag">{tag}</span>
-                    ))}
-                </div>
-                <div className="footer">
-                    {(() => {
-                        const baseUrl = window.location.origin + window.location.pathname + '?id=' + encodeURIComponent(contenido.Id || Id);
-                        const text = `¡Mirá lo que publicó @NachoPNG! Estoy seguro que te va a interesar: ${baseUrl}`;
-                        const tweetUrl =
-                            'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text);
-                        return (
-                            <a href={tweetUrl} target="_blank" rel="noopener noreferrer" className="share-button">
-                                Compartir en X
-                            </a>
-                        );
-                    })()}
-
-                    {(() => {
-                        const baseUrl = window.location.origin + window.location.pathname + '?id=' + encodeURIComponent(contenido.Id || Id);
-                        const linkedinUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(baseUrl);
-                        return (
-                            <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="share-button">
-                                Compartir en <span className="fab fa-linkedin"></span> LinkedIn
-                            </a>
-                        );
-                    })()}
-                </div>
-                <span onClick={Volver} className="volverBtn btn">Volver</span>
-            </div>
-        );
+        return <div className="maincontent">Cargando...</div>;
     }
+
+    const articleUrl = `${window.location.origin}${window.location.pathname}?id=${encodeURIComponent(contenido.Id || Id)}`;
+    const tweetText = `¡Mirá lo que publicó @NachoPNG! Estoy seguro que te va a interesar: ${articleUrl}`;
+    const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`;
+
+    return (
+        <div className="maincontent">
+            <div className="banner">
+                <img
+                    className="contentbanner"
+                    src={`/img/img-${contenido.Img}`}
+                    alt={contenido.Title}
+                />
+            </div>
+
+            <ReadingProgress progress={readingProgress} content={contenido.Content} />
+
+            <div className="principalcontent">
+                <h2 className="tm-text-primary" id="articles">{contenido.Title}</h2>
+                <hr className="mb-5" />
+                <div
+                    ref={articleContentRef}
+                    className="detail-content"
+                    dangerouslySetInnerHTML={articleMarkup}
+                />
+            </div>
+            <div className="articuleTags">
+                {contenido.Tags?.map((tag, index) => (
+                    <span key={index} className="tag">{tag}</span>
+                ))}
+            </div>
+            <div className="footer">
+                <a href={tweetUrl} target="_blank" rel="noopener noreferrer" className="share-button">
+                    Compartir en X
+                </a>
+                <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className="share-button">
+                    Compartir en <span className="fab fa-linkedin" /> LinkedIn
+                </a>
+            </div>
+            <span onClick={Volver} className="volverBtn btn">Volver</span>
+        </div>
+    );
 }

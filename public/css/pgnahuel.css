@@ -198,8 +198,6 @@ body{
 
 
 .maincontent{
-	margin-left:20px;
-	padding:15px;
 	max-width:1100px;
 	text-align: justify;
 }
@@ -224,8 +222,102 @@ body{
 	padding:5px 10px;
 }
 
+.reading-progress {
+    margin: 0 0 18px;
+    padding: 10px 12px;
+    background: var(--color-surface);
+    box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.reading-progress-wrapper.is-pinned .reading-progress {
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    margin: 0;
+    padding-left:60px;
+}
+
+.reading-progress__header,
+.reading-progress__summary,
+.reading-progress__actions {
+    display: flex;
+    align-items: baseline;
+}
+
+.reading-progress__header {
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.reading-progress__actions {
+    gap: 6px;
+}
+
+.reading-progress__summary {
+    gap: 7px;
+    color: var(--color-text-strong);
+    font-size: .85rem;
+}
+
+.reading-progress__summary strong {
+    color: var(--color-primary);
+    font-size: 1.05rem;
+}
+
+.reading-progress__track {
+    height: 4px;
+    margin-top: 7px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--color-surface-alt);
+}
+
+.reading-progress__bar {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--color-primary);
+    transition: width .15s ease-out;
+}
+
+.reading-progress__top {
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-primary);
+    background: var(--color-surface-alt);
+    font: inherit;
+    font-size: .72rem;
+    cursor: pointer;
+}
+
+.reading-progress__top {
+    width: 26px;
+    height: 24px;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.reading-progress__top:hover,
+.reading-progress__top:focus-visible {
+    color: var(--color-on-primary);
+    background: var(--color-primary);
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    .reading-progress {
+        top: 0;
+        margin-bottom: 12px;
+    }
+
+}
+
 @media (min-width:990px){
 	.maincontent{
+
+        	margin-left:20px;
+	padding:15px;
 		padding-left:280px;
 		margin:auto;
 	}

@@ -33,6 +33,7 @@ https://templatemo.com/tm-555-upright
 pre{
 	background-color: var(--color-code);
 	padding:10px;
+	color: var(--color-on-code);
 }
 
 .news-container {
@@ -816,8 +817,8 @@ select:not([multiple]) {
 		border-radius: 0;
 		border-top-right-radius: 5px;
 		border-bottom-right-radius: 5px;
-		top: 40px;
 		z-index: 10000;
+		height: 56px;
 	}
 
 	.navbar-toggler:focus { outline: none; }
