@@ -2,9 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import NavBarItem from "./items";
 import t from "./../resources/translate";
 
-export default function Navigator({ Unload }) {
+export default function Navigator({ Unload, articleMode = false, isMenuOpen, onMenuOpenChange }) {
     const sidebarRef = useRef(null);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [internalMenuOpen, setInternalMenuOpen] = useState(false);
+    const menuOpen = isMenuOpen ?? internalMenuOpen;
+    const setMenuOpen = onMenuOpenChange || setInternalMenuOpen;
     
     const [theme, setTheme] = useState(() => {
         const savedTheme = window.localStorage.getItem("theme");
@@ -18,14 +20,14 @@ export default function Navigator({ Unload }) {
         const closeMenuOnOutsidePress = (event) => {
             const togglerIsVisible = window.matchMedia("(max-width: 991px)").matches;
 
-            if (isMenuOpen && togglerIsVisible && !sidebarRef.current?.contains(event.target)) {
-                setIsMenuOpen(false);
+            if (menuOpen && (togglerIsVisible || articleMode) && !sidebarRef.current?.contains(event.target)) {
+                setMenuOpen(false);
             }
         };
 
         document.addEventListener("pointerdown", closeMenuOnOutsidePress);
         return () => document.removeEventListener("pointerdown", closeMenuOnOutsidePress);
-    }, [isMenuOpen]);
+    }, [menuOpen, articleMode, setMenuOpen]);
 
     useEffect(() => {
         document.documentElement.dataset.theme = theme;
@@ -39,14 +41,14 @@ export default function Navigator({ Unload }) {
     const isDarkTheme = theme === "dark";
 
     return (
-        <div id="tm-sidebar" ref={sidebarRef} className={`tm-sidebar${isMenuOpen ? " show" : ""}`}>
+        <div id="tm-sidebar" ref={sidebarRef} className={`tm-sidebar${menuOpen ? " show" : ""}${articleMode ? " tm-sidebar--secondary" : ""}`}>
             <nav className="tm-nav">
                 <button
                     className="navbar-toggler"
                     type="button"
                     aria-label="Toggle navigation"
-                    aria-expanded={isMenuOpen}
-                    onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+                    aria-expanded={menuOpen}
+                    onClick={() => setMenuOpen((isOpen) => !isOpen)}
                 >
                     <i className="fas fa-bars"></i>
                 </button>

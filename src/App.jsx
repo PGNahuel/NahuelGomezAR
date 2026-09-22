@@ -6,7 +6,6 @@ import PanelArticles from './listproject/ListProjects';
 import DetailContent from "./detailcontent/DetailContent";
 import PanelContact from './contact/panelContact';
 import MainContent from './maincontent/maincontent';
-import tableContent from './tablecontent.json'
 
 function HomePage({ onSelectArticle }) {
   useEffect(() => {
@@ -37,7 +36,7 @@ function HomePage({ onSelectArticle }) {
   );
 }
 
-function ArticleDetailPage() {
+function ArticleDetailPage({ onOpenSiteNavigation }) {
   const navigate = useNavigate();
   const fnNavigate = (arg)=>{
     window.document.title = "Nahuel Gómez";
@@ -60,21 +59,12 @@ function ArticleDetailPage() {
     }, 100);
   };
 
-  return <DetailContent Id={id} Volver={volverALista} />;
+  return <DetailContent Id={id} Volver={volverALista} onOpenSiteNavigation={onOpenSiteNavigation} />;
 }
 
 function AppContent() {
-  const [articulos, setArticulos] = useState([]);
+  const [isSiteNavigationOpen, setIsSiteNavigationOpen] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const cargarArticulos = async () => {
-      const datosArticulos = tableContent;
-      setArticulos(datosArticulos);
-    };
-
-    cargarArticulos();
-  }, []);
 
   const seleccionarArticulo = (articulo) => {
     navigate(`/?id=${articulo.Id}`);
@@ -87,13 +77,24 @@ function AppContent() {
   const searchParams = new URLSearchParams(window.location.search);
   const id = searchParams.get('id');
 
+  useEffect(() => {
+    if (id) {
+      setIsSiteNavigationOpen(false);
+    }
+  }, [id]);
+
   return (
     <div className="container-fluid" id="home">
       <div className="row">
-        <Navigator Unload={volverALista} />
+        <Navigator
+          Unload={volverALista}
+          articleMode={Boolean(id)}
+          isMenuOpen={isSiteNavigationOpen}
+          onMenuOpenChange={setIsSiteNavigationOpen}
+        />
         <div className="tm-main">
           <Routes>
-            <Route path="/" element={id ? <ArticleDetailPage articulos={articulos} /> : <HomePage onSelectArticle={seleccionarArticulo} />} />
+            <Route path="/" element={id ? <ArticleDetailPage onOpenSiteNavigation={() => setIsSiteNavigationOpen(true)} /> : <HomePage onSelectArticle={seleccionarArticulo} />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
