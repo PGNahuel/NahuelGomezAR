@@ -16,6 +16,7 @@
     --color-profile: #abddea;
     --color-quote: #54a4cc;
     --color-tag: #e1e1ff;
+    --color-article-tags: #006496;
     --color-on-primary: #ffffff;
     --color-shadow: rgba(0, 0, 0, 0.16);
 }
@@ -37,6 +38,7 @@ html[data-theme="dark"] {
     --color-profile: #1d4559;
     --color-quote: #286384;
     --color-tag: #26384b;
+    --color-article-tags: #0a1d46;
     --color-on-primary: #d3e4f0;
     --color-shadow: rgba(0, 0, 0, 0.42);
 }

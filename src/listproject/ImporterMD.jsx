@@ -77,26 +77,4 @@ async function importMarkdownByID(id) {
     return null;
 }
 
-async function importAllMarkdown() {
-    const filenames = tableContent;
-    
-    try {
-        const arts = await Promise.all(filenames.map(async f => {
-            const html = await fetchAndParseMarkdown(`/articules/${f.file}`);
-            return {
-                id: f.id,
-                title: f.title,
-                author: f.author,
-                content: html,
-                img: f.img
-            };
-        }));
-
-        return arts;
-    } catch (error) {
-        console.error("Error al cargar todos los artículos:", error);
-        return [];
-    }
-}
-
-export default { importAllMarkdown, importMarkdownByID }
+export default { importMarkdownByID }
