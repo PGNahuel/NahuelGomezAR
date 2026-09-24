@@ -1,6 +1,8 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import t from "./../resources/translate";
 import tableContent from "../tablecontent.json";
+import ContentSection from "../layout/ContentSection";
+import { contentPathsById } from "../contentPaths";
 
 const ARTICLES_PER_PAGE = 6;
 
@@ -36,17 +38,24 @@ const Article = ({ article, onClick }) => {
     );
 };
 
-const PanelArticles = ({ Load }) => {
+const PanelArticles = ({ Load, selectedPath, onClearPath }) => {
     const [query, setQuery] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const normalizedQuery = normalizeText(query.trim());
 
+    const activePath = selectedPath ? contentPathsById[selectedPath] : null;
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [selectedPath]);
+
     const articles = useMemo(() => tableContent
         .filter((article) => {
+            if (activePath && article.path !== activePath.id) return false;
             if (!normalizedQuery) return true;
             const searchableContent = [article.title, article.author, ...(article.tags || [])].join(" ");
             return normalizeText(searchableContent).includes(normalizedQuery);
-        }), [normalizedQuery]);
+        }), [normalizedQuery, activePath]);
     const totalPages = Math.ceil(articles.length / ARTICLES_PER_PAGE);
     const visibleArticles = articles.slice((currentPage - 1) * ARTICLES_PER_PAGE, currentPage * ARTICLES_PER_PAGE);
 
@@ -56,11 +65,12 @@ const PanelArticles = ({ Load }) => {
     };
 
     return (
-        <div className="tm-section-wrap" id="articles">
-            <div className="tm-parallax" data-parallax="scroll" data-image-src="img/brainstrom.webp" id="imgArticules" />
-            <section className="tm-section" aria-labelledby="articles-title">
+        <ContentSection as="div" id="articles">
+            <section className="content-section__body" aria-labelledby="articles-title">
                 <h2 id="articles-title" className="tm-text-primary">{t("ARTICLES")}</h2>
+                <p className="articles-intro">{activePath ? activePath.description : "Una biblioteca de ideas y experiencias para mejorar cómo pensás, construís y sostenés software."}</p>
                 <hr className="mb-5" />
+                {activePath && <div className="active-path" role="status"><span><i className="fas fa-compass" aria-hidden="true" /> {activePath.title}</span><button type="button" onClick={onClearPath}>Ver todos los artículos</button></div>}
                 <div className="articles-search">
                     <div className="articles-search-input">
                         <i className="fas fa-search" aria-hidden="true" />
@@ -85,7 +95,7 @@ const PanelArticles = ({ Load }) => {
                     </>
                 ) : <p className="articles-empty">No encontramos artículos para “{query}”. Probá con otro término o tema.</p>}
             </section>
-        </div>
+        </ContentSection>
     );
 };
 

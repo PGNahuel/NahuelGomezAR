@@ -1,15 +1,15 @@
 import React from "react";
 import FormContact from "./form";
 import t from "./../resources/translate"
+import ContentSection from "../layout/ContentSection";
 
 const PanelContact = (props) =>{
     const mapJoseMarmol = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d382617.3199213441!2d-58.632208252009555!3d-34.56557698360964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb3faddba8be7%3A0x93e8f54e16d05cc5!2sBuenos%20Aires%20Metropolitan%20Area!5e0!3m2!1ses-419!2sar!4v1784664611263!5m2!1ses-419!2sar"
     const title = props.title ? props.title : t("CONTACT");
 
     return (
-        <div className="tm-section-wrap">
-            <div className="tm-parallax" data-parallax="scroll" data-image-src="img/contacto.webp" id="imgContact"></div>
-            <div id="contact" className="tm-section">
+        <ContentSection as="div">
+            <div id="contact" className="content-section__body contact-section">
                 <h2 className="tm-text-primary">{title}</h2>
                 <hr className="mb-5" />
                 <div className="row">
@@ -37,7 +37,7 @@ const PanelContact = (props) =>{
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:info@company.com">
+                                <a href={`mailto:${props.Email}`}>
                                     <i className="fas fa-at mr-2 tm-contact-link-icon"></i>
                                     {t("EMAIL")}: {props.Email}
                                 </a>
@@ -54,7 +54,7 @@ const PanelContact = (props) =>{
                     </div>
                 </div>
             </div>
-        </div>
+        </ContentSection>
     )
 }
 
