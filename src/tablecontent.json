@@ -1,6 +1,7 @@
 [
     {
         "id": "observability",
+        "path": "systems",
         "title": "Conociendo la observabilidad",
         "file": "observability.md",
         "author": "Nahuel Gómez",
@@ -9,6 +10,7 @@
     },
     {
         "id": "personal-experience",
+        "path": "career",
         "title": "Mi experiencia profesional",
         "file": "exp.md",
         "author": "Nahuel Gómez",
@@ -17,6 +19,7 @@
     },
     {
         "id": "codificacion-documentacion",
+        "path": "thinking",
         "title": "Codificación prolija y documentación",
         "file": "neat_coding.md",
         "author": "Nahuel Gómez",
@@ -25,6 +28,7 @@
     },
     {
         "id": "pensar-abstracciones",
+        "path": "thinking",
         "title": "Pensar en abstracciones: una forma más sana de programar",
         "file": "think_abstract.md",
         "author": "Nahuel Gómez",
@@ -33,6 +37,7 @@
     },
     {
         "id": "mi-libro",
+        "path": "career",
         "title": "Mi libro: Código del alma",
         "file": "mybook.md",
         "author": "Nahuel Gómez",
@@ -41,6 +46,7 @@
      }
      ,    {
         "id": "planification",
+        "path": "systems",
         "title": "Planificación en el desarrollo de software",
         "file": "planification.md",
         "author": "Nahuel Gómez",
