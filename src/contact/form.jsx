@@ -3,10 +3,9 @@ import React from "react";
 export default function FormContact() {
     return (
         <form>
-            <p>Encantado de que me quieras contactar, te dejo mis datos de contacto en esta sección.</p>
-            <p>Espero entiendas estoy tratando de poco a poco armar mi espacio digital, para así llegar a distintas personas con mucho conocimiento.</p>
-            <p>Si me buscas para ofertas, usa el mail, lo miro siempre.</p>
-            <p>Mis redes son personales, pero ahí está mi transparencia.</p>
+            <p>¿Te sirvió un artículo, querés compartir una idea o conversar sobre un problema técnico? Me encantará leerte.</p>
+            <p>Este espacio crece con preguntas, experiencias y conversaciones reales sobre cómo construir mejor software.</p>
+            <p>Podés escribirme por mail o encontrarme en mis redes. Las leo personalmente.</p>
         </form>
     )
 }

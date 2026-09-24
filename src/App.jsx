@@ -8,28 +8,19 @@ import PanelContact from './contact/panelContact';
 import MainContent from './maincontent/maincontent';
 
 function HomePage({ onSelectArticle }) {
-  useEffect(() => {
-    setTimeout(() => {
-      if (window.$) {
-        window.$('.tm-parallax').each(function () {
-          const imageSrc = window.$(this).data('image-src');
-          window.$(this).parallax({ imageSrc: imageSrc });
-        });
-      }
-    }, 100);
-  }, []);
+  const [selectedPath, setSelectedPath] = useState(null);
 
   return (
     <>
-      <MainContent />
-      <PanelArticles Load={onSelectArticle} />
+      <MainContent onSelectPath={setSelectedPath} />
+      <PanelArticles Load={onSelectArticle} selectedPath={selectedPath} onClearPath={() => setSelectedPath(null)} />
       <PanelContact
         Phone="541136695771"
         Email="pgnahuel@gmail.com"
         Instagram="_nacho.png"
         X="NachoPNG"
         Youtube="NahuelGomez94"
-        Linkedin="nahuel-g%C3%B3mez-a869617b"
+        Linkedin="pgnahuel"
         Podcast="escuchar-audios-nahuel-gomez_al_15792872_1.html"
       />
     </>
@@ -48,15 +39,6 @@ function ArticleDetailPage({ onOpenSiteNavigation }) {
 
   const volverALista = () => {
     fnNavigate('/');
-
-    setTimeout(() => {
-      if (window.$) {
-        window.$('.tm-parallax').each(function () {
-          const imageSrc = window.$(this).data('image-src');
-          window.$(this).parallax({ imageSrc: imageSrc });
-        });
-      }
-    }, 100);
   };
 
   return <DetailContent Id={id} Volver={volverALista} onOpenSiteNavigation={onOpenSiteNavigation} />;

@@ -1,21 +1,66 @@
 import React from "react";
-import t from "./../resources/translate";
+import ContentSection from "../layout/ContentSection";
+export default function MainContent({ onSelectPath }) {
+    const scrollToArticles = () => {
+        document.querySelector("#articles")?.scrollIntoView({ behavior: "smooth" });
+    };
 
-export default function MainContent() {
+    const choosePath = (path) => {
+        onSelectPath(path);
+        window.setTimeout(scrollToArticles, 0);
+    };
+
+    const exploreArticles = (event) => {
+        event.preventDefault();
+        onSelectPath(null);
+        scrollToArticles();
+    };
+
     return (
-        <div className="tm-section-wrap">
-                        <div className="tm-parallax" data-parallax="scroll" data-image-src="img/inews.webp"></div>
-
-        <div className="profile-card">
-            <div className="profile-image">
-                <img src="/img/yo.webp" alt="Foto de perfil de Nahuel"></img>
+        <ContentSection className="home-intro" aria-labelledby="home-title">
+            <div className="home-content">
+                <div className="home-copy">
+                    <p className="home-eyebrow">Backend, sistemas y crecimiento profesional</p>
+                    <h1 id="home-title">Aprendé a diseñar, construir y sostener mejores sistemas.</h1>
+                    <p className="home-lead">Ideas prácticas para resolver problemas reales, tomar mejores decisiones técnicas y crecer como profesional mientras lo hacés.</p>
+                    <a className="home-cta" href="#articles" onClick={exploreArticles}>Explorar los contenidos <i className="fas fa-arrow-down" aria-hidden="true" /></a>
+                </div>
+                <aside className="hero-visual" aria-label="Ilustración sobre trabajo y sistemas de software">
+                    <div className="hero-visual-artwork">
+                        <img src="/img/inews.webp" alt="Ilustración de una persona trabajando con diagramas de software" />
+                    </div>
+                    <span className="hero-visual-label">De la práctica a mejores decisiones</span>
+                    <div className="hero-visual-meta">
+                        <div className="profile-image home-profile-image">
+                            <img src="/img/yo.webp" alt="Nahuel Gómez, autor del sitio" />
+                        </div>
+                        <p className="hero-author"><strong>Soy Nahuel, desarrollador backend.</strong> Comparto aprendizajes, ejemplos y soluciones que me sirvieron en la vida real.</p>
+                    </div>
+                </aside>
             </div>
-            <div className="profile-text">
-                <p><strong>Hola, soy Nahuel. Trabajo como desarrollador backend y con los años me fui especializando en automatizar tareas y sacarle el jugo a cada proceso.</strong> Me gusta ir directo al grano, entender qué hace falta y resolverlo de la forma más clara y eficiente posible. En este espacio comparto ideas, aprendizajes y algunas soluciones que me sirvieron en la vida real, sin vueltas ni teorías de más.</p>
-                
-                <p>Si estás arrancando en el mundo del desarrollo o simplemente querés mejorar lo que ya venís haciendo, capaz te interese lo que vas a encontrar por acá. <strong>Hay artículos cortos, ejemplos prácticos y uno que otro experimento.</strong> La idea es que te lleves algo útil cada vez que pases.</p>
+            <div className="learning-paths" aria-labelledby="paths-title">
+                <div className="paths-heading">
+                    <p className="home-eyebrow">Elegí por dónde empezar</p>
+                    <h2 id="paths-title">Tres caminos para recorrer el sitio</h2>
+                </div>
+                <div className="paths-grid">
+                    <button type="button" className="learning-path" onClick={() => choosePath("systems")}>
+                        <i className="fas fa-tools" aria-hidden="true" />
+                        <span>Resolver problemas reales en sistemas</span>
+                        <small>Observabilidad, planificación y prácticas para el trabajo cotidiano.</small>
+                    </button>
+                    <button type="button" className="learning-path" onClick={() => choosePath("thinking")}>
+                        <i className="fas fa-sitemap" aria-hidden="true" />
+                        <span>Pensar mejor: arquitectura, diseño y decisiones</span>
+                        <small>Abstracciones, código mantenible y documentación que ayuda.</small>
+                    </button>
+                    <button type="button" className="learning-path" onClick={() => choosePath("career")}>
+                        <i className="fas fa-seedling" aria-hidden="true" />
+                        <span>Crecer profesionalmente</span>
+                        <small>Experiencia, comunicación y aprendizajes de una carrera en tecnología.</small>
+                    </button>
+                </div>
             </div>
-        </div>
-        </div>
+        </ContentSection>
     )
 }
