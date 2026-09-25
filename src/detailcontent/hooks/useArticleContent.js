@@ -21,13 +21,13 @@ function formatArticle(article) {
 }
 
 export default function useArticleContent(Id, Articulo) {
-    const [contenido, setContenido] = useState(initialContent);
+    const [contenido, setContenido] = useState(() => Articulo ? { ...formatArticle(Articulo), Cargando: false } : initialContent);
 
     useEffect(() => {
         let isCurrent = true;
 
         if (Articulo) {
-            setContenido({ ...Articulo, Cargando: false });
+            setContenido({ ...formatArticle(Articulo), Cargando: false });
             return () => {
                 isCurrent = false;
             };
@@ -41,7 +41,6 @@ export default function useArticleContent(Id, Articulo) {
 
                 const formattedArticle = formatArticle(article);
                 window.document.title = `Nahuel Gómez | ${formattedArticle.Title}`;
-                window.history.replaceState(null, formattedArticle.Title, `/?id=${formattedArticle.Id}`);
                 setContenido({ ...formattedArticle, Cargando: false });
             })
             .catch((error) => {

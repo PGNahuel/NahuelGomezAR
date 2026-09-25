@@ -17,9 +17,18 @@
     <meta property="og:url" content="https://nahuelgomez.ar/">
 
     <!-- Archivos de estructura para IA y Motores de Búsqueda -->
-    <link rel="alternate" type="application/ld+json" href="/schema.jsonld">
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-    
+
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          const theme = savedTheme === "light" || savedTheme === "dark"
+            ? savedTheme
+            : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.dataset.theme = theme;
+        } catch (_) {}
+      })();
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/specimen/Kumbh+Sans -->
     <link rel="stylesheet" href="/fontawesome/css/all.min.css">  <!-- https://fontawesome.com/-->  
     <link rel="stylesheet" href="/css/bootstrap.min.css">        <!-- https://getbootstrap.com/ -->

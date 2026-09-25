@@ -1,6 +1,7 @@
 import React from "react";
 import ContentSection from "../layout/ContentSection";
 import { contentPaths } from "../contentPaths";
+import { profilePath } from "../articlePaths";
 export default function MainContent({ onSelectPath }) {
     const scrollToArticles = () => {
         document.querySelector("#articles")?.scrollIntoView({ behavior: "smooth" });
@@ -36,6 +37,7 @@ export default function MainContent({ onSelectPath }) {
                             <img src="/img/yo.webp" alt="Nahuel Gómez, autor del sitio" />
                         </div>
                         <p className="hero-author"><strong>Soy Nahuel, desarrollador backend.</strong> Comparto aprendizajes, ejemplos y soluciones que me sirvieron en la vida real.</p>
+                        <a href={profilePath}>Conocé mi trayectoria</a>
                     </div>
                 </aside>
             </div>

@@ -1,4 +1,4 @@
-## Código del alma
+# Código del alma
 
 Sinceramente, este es un libro que escribí a fines del 2023 con intención de expresar lo que pienso, de contar algunas de mis experiencias, de que quede en algún lado lo que en mis veintinueve años pude experimentar y considero importante.
 

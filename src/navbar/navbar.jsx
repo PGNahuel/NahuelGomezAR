@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import NavBarItem from "./items";
 import t from "./../resources/translate";
+import { profilePath } from '../articlePaths';
+import { getActiveTheme } from '../theme';
 
 export default function Navigator({ Unload, articleMode = false, isMenuOpen, onMenuOpenChange }) {
     const sidebarRef = useRef(null);
@@ -8,13 +10,13 @@ export default function Navigator({ Unload, articleMode = false, isMenuOpen, onM
     const menuOpen = isMenuOpen ?? internalMenuOpen;
     const setMenuOpen = onMenuOpenChange || setInternalMenuOpen;
     
-    const [theme, setTheme] = useState(() => {
-        const savedTheme = window.localStorage.getItem("theme");
-        if (savedTheme === "light" || savedTheme === "dark") {
-            return savedTheme;
-        }
-        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    });
+    const [theme, setTheme] = useState("light");
+    const [themeReady, setThemeReady] = useState(false);
+
+    useEffect(() => {
+        setTheme(getActiveTheme());
+        setThemeReady(true);
+    }, []);
 
     useEffect(() => {
         const closeMenuOnOutsidePress = (event) => {
@@ -30,9 +32,10 @@ export default function Navigator({ Unload, articleMode = false, isMenuOpen, onM
     }, [menuOpen, articleMode, setMenuOpen]);
 
     useEffect(() => {
+        if (!themeReady) return;
         document.documentElement.dataset.theme = theme;
         window.localStorage.setItem("theme", theme);
-    }, [theme]);
+    }, [theme, themeReady]);
 
     const toggleTheme = () => {
         setTheme((currentTheme) => currentTheme === "dark" ? "light" : "dark");
@@ -57,9 +60,10 @@ export default function Navigator({ Unload, articleMode = false, isMenuOpen, onM
                         <h1 className="tm-brand">PG Nahuel</h1>
                     </div>
                     <ul id="tm-main-nav">
-                        <NavBarItem description={t("MAIN_CONTENT")} icon="fa-home" href="#home" onClick={() => Unload("#home")} />
-                        <NavBarItem description={t("ARTICLES")} icon="fa-user-friends" href="#articles" onClick={() => Unload("#articles")} />
-                        <NavBarItem description={t("CONTACT")} icon="fa-envelope" href="#contact" onClick={() => Unload("#contact")} />
+                        <NavBarItem description={t("MAIN_CONTENT")} icon="fa-home" href="/#home" onClick={() => Unload("#home")} />
+                        <NavBarItem description={t("ARTICLES")} icon="fa-user-friends" href="/#articles" onClick={() => Unload("#articles")} />
+                        <NavBarItem description="Sobre mí" icon="fa-user" href={profilePath} />
+                        <NavBarItem description={t("CONTACT")} icon="fa-envelope" href="/#contact" onClick={() => Unload("#contact")} />
                         <NavBarItem description={t("CV")} icon="fa-file-pdf" blank="true" href="/CV_Nahuel_Gomez_Senior_Backend_Engineer.pdf" onClick={() => {}} />
                         <NavBarItem description="Modo" icon={isDarkTheme ? "fa-sun" : "fa-moon"} onClick={toggleTheme}
                         aria-pressed={isDarkTheme}

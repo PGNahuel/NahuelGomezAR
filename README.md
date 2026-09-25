@@ -1,28 +1,28 @@
-# React + Vite
+# Sitio de Nahuel Gómez
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Los artículos se escriben en `public/articules/*.md`. Cada archivo debe tener una entrada única en `src/tablecontent.json` con ID, título, descripción y nombre de archivo. El build comprueba que ambos listados coincidan.
 
-## Available Scripts
+## Desarrollo
+
 ```sh
-# run server development
+npm install
 npm run dev
-
-# create build for production
-npm run build
-
-# lint files
-npm run lint
-
-# show preview of build production
-npm run preview
-
 ```
 
-Currently, two official plugins are available:
+## Publicación
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```sh
+npm run build
+```
 
-## Expanding the ESLint configuration
+El comando construye React y genera en `dist/` la portada, `/sobre-mi/` y una página HTML completa por artículo en `/articulos/<id>/`. También genera `sitemap.xml`, `schema.jsonld`, `llms.txt`, `.htaccess` para Hostinger/LiteSpeed, `404.html` y copia el CV. Se debe publicar **el contenido completo de `dist/`, incluidos los archivos ocultos**. No se deben publicar los archivos de la raíz del repositorio en lugar de `dist/`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Las URL anteriores `/?id=<id>` se redirigen con HTTP 301 mediante `.htaccess`. Al agregar o quitar un artículo, se actualizan automáticamente las páginas, el sitemap, `llms.txt` y esas redirecciones.
+
+Para comprobar el HTML sin ejecutar JavaScript:
+
+```sh
+curl -s https://nahuelgomez.ar/articulos/personal-experience/ | grep 'Mi pasado profesional'
+```
+
+Después de publicar, enviar `https://nahuelgomez.ar/sitemap.xml` a Google Search Console y revisar la inspección de URLs. `npm run lint` revisa el código propio; los archivos JavaScript de terceros en `public/` quedan excluidos.

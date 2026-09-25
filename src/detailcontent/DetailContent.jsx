@@ -5,8 +5,9 @@ import useMermaidDiagrams from "./hooks/useMermaidDiagrams";
 import useReadingProgress from "./hooks/useReadingProgress";
 import useArticleTableOfContents from "./hooks/useArticleTableOfContents";
 import ArticleNavigation from "./ArticleNavigation";
+import { articlePath } from '../articlePaths';
 
-export default function DetailContent({ Id, Articulo, Volver, onOpenSiteNavigation }) {
+export default function DetailContent({ Id, Articulo, onOpenSiteNavigation }) {
     const articleContentRef = useRef(null);
     const contenido = useArticleContent(Id, Articulo);
     const articleMarkup = useMemo(
@@ -30,7 +31,7 @@ export default function DetailContent({ Id, Articulo, Volver, onOpenSiteNavigati
         return <div className="maincontent">Cargando...</div>;
     }
 
-    const articleUrl = `${window.location.origin}${window.location.pathname}?id=${encodeURIComponent(contenido.Id || Id)}`;
+    const articleUrl = `https://nahuelgomez.ar${articlePath(contenido.Id || Id)}`;
     const tweetText = `¡Mirá lo que publicó @NachoPNG! Estoy seguro que te va a interesar: ${articleUrl}`;
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
     const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`;
@@ -71,7 +72,7 @@ export default function DetailContent({ Id, Articulo, Volver, onOpenSiteNavigati
                     Compartir en <span className="fab fa-linkedin" /> LinkedIn
                 </a>
                 </div>
-                <span onClick={Volver} className="volverBtn btn">Volver</span>
+                <a href="/" className="volverBtn btn">Volver</a>
             </div>
         </>
     );

@@ -3,6 +3,7 @@ import t from "./../resources/translate";
 import tableContent from "../tablecontent.json";
 import ContentSection from "../layout/ContentSection";
 import { contentPathsById } from "../contentPaths";
+import { articlePath } from "../articlePaths";
 
 const ARTICLES_PER_PAGE = 6;
 
@@ -11,12 +12,12 @@ const normalizeText = (value = "") => value
     .replace(/[\u0300-\u036f]/g, "")
     .toLocaleLowerCase();
 
-const Article = ({ article, onClick }) => {
+const Article = ({ article }) => {
     const author = article.author || t("UNKNOW");
     const image = article.img || "articule.webp";
     return (
         <article className="news-card">
-            <button type="button" className="news-card-button" onClick={onClick} aria-label={`Leer artículo: ${article.title}`}>
+            <a href={articlePath(article.id)} className="news-card-button" aria-label={`Leer artículo: ${article.title}`}>
                 <img src={`img/tm-${image}`} className="news-image" alt="" />
                 <div className="news-content">
                     <h3 className="news-title">{article.title}</h3>
@@ -33,12 +34,12 @@ const Article = ({ article, onClick }) => {
                         </div>
                     )}
                 </div>
-            </button>
+            </a>
         </article>
     );
 };
 
-const PanelArticles = ({ Load, selectedPath, onClearPath }) => {
+const PanelArticles = ({ selectedPath, onClearPath }) => {
     const [query, setQuery] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const normalizedQuery = normalizeText(query.trim());
@@ -81,7 +82,7 @@ const PanelArticles = ({ Load, selectedPath, onClearPath }) => {
                 {articles.length > 0 ? (
                     <>
                         <div className="news-container">
-                            {visibleArticles.map((article) => <Article key={article.id} article={article} onClick={() => Load({ Id: article.id })} />)}
+                            {visibleArticles.map((article) => <Article key={article.id} article={article} />)}
                         </div>
                         {totalPages > 1 && (
                             <nav className="article-pagination" aria-label="Paginación de artículos">
