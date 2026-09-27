@@ -72,7 +72,10 @@ export function AppContent({ initialArticle = null }) {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/articulos/:id" element={<ArticleDetailPage id={decodeURIComponent(articleId || '')} initialArticle={initialArticle} onOpenSiteNavigation={() => setIsSiteNavigationOpen(true)} />} />
-            <Route path={profilePath} element={<ProfileContent />} />
+            <Route
+              path={profilePath}
+              element={<ProfileContent initialArticle={initialArticle?.id === 'personal-experience' ? initialArticle : null} />}
+            />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>

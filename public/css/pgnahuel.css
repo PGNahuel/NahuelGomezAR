@@ -299,8 +299,9 @@ html[data-theme="dark"] {
 .hero-author strong { color: var(--color-text-strong); }
 
 .profile-page .content-section__body { max-width: 780px; }
-.profile-page h2 { margin-top: 2rem; }
-.profile-lead { font-size: 1.2rem; line-height: 1.6; }
+.profile-page .profile-experience { text-align: left; }
+.profile-page .profile-experience h2 { margin-top: 2rem; }
+.profile-page .profile-experience ul { padding-left: 1.5rem; }
 
 .hero-visual-meta {
     display: flex;

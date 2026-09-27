@@ -7,6 +7,7 @@
         "file": "observability.md",
         "author": "Nahuel Gómez",
         "img": "observability.webp",
+        "visible": true,
         "tags": ["Observabilidad","Desarrollo de Software","Monitoreo","Logs","Métricas","Trazas","Microservicios","Buenas Prácticas"]
     },
     {
@@ -17,6 +18,7 @@
         "file": "exp.md",
         "author": "Nahuel Gómez",
         "img": "codeando.webp",
+        "visible": false,
         "tags": ["Experiencia Profesional","Software Engineering","Desarrollo Backend","Habilidades Blandas"]
     },
     {
@@ -27,6 +29,7 @@
         "file": "neat_coding.md",
         "author": "Nahuel Gómez",
         "img": "relatando.webp",
+        "visible": true,
         "tags": ["Clean Code","Documentación","Principios SOLID","Buenas Prácticas","Refactorización","Patrones de Diseño","Swagger","ADR","Testing"]
     },
     {
@@ -37,6 +40,7 @@
         "file": "think_abstract.md",
         "author": "Nahuel Gómez",
         "img": "podcaster.webp",
+        "visible": true,
         "tags": ["Abstracciones","Clean Code","Principios SOLID","Patrones de Diseño","Arquitectura de Software","Interfaz","Reutilización de Código","Mantenibilidad"]
     },
     {
@@ -47,6 +51,7 @@
         "file": "mybook.md",
         "author": "Nahuel Gómez",
         "img": "news.webp",
+        "visible": true,
         "tags": ["Código del alma","Experiencia Personal","Reflexión","Paternidad","Desarrollo Personal","Libros y Escritos"]
      }
      ,    {
@@ -57,6 +62,7 @@
         "file": "planification.md",
         "author": "Nahuel Gómez",
         "img": "planning.webp",
+        "visible": true,
         "tags": ["Planificación","Desarrollo de Software","Gestión de Proyectos","Metodologías Agiles","Scrum","Kanban"]
     }
 ]

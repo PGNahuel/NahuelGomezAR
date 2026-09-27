@@ -26,6 +26,15 @@ if (articles.some((article) => !/^[a-z0-9-]+$/.test(article.id) || !article.titl
   throw new Error('Cada artículo necesita un ID válido, título, descripción y autor.');
 }
 
+const professionalExperience = articles.find((article) => article.id === 'personal-experience');
+if (!professionalExperience) {
+  throw new Error('Falta el artículo de experiencia profesional.');
+}
+const professionalExperienceArticle = {
+  ...professionalExperience,
+  content: parseMarkdown(await readFile(resolve(projectRoot, 'public/articules', professionalExperience.file), 'utf8'))
+};
+
 const template = await readFile(resolve(dist, 'index.html'), 'utf8');
 const escapeHtml = (value) => String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
@@ -94,8 +103,9 @@ try {
     title: `Sobre mí | ${profile.name}`,
     description: profile.description,
     type: 'profile',
-    markup: render(profilePath),
+    markup: render(profilePath, professionalExperienceArticle),
     schema: { '@context': 'https://schema.org', '@graph': [personSchema, { '@type': 'ProfilePage', mainEntity: { '@id': personSchema['@id'] }, url: absoluteUrl(profilePath) }] },
+    article: professionalExperienceArticle,
     image: '/img/yo.webp'
   }));
 

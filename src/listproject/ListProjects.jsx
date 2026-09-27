@@ -52,6 +52,7 @@ const PanelArticles = ({ selectedPath, onClearPath }) => {
 
     const articles = useMemo(() => tableContent
         .filter((article) => {
+            if (article.visible !== true) return false;
             if (activePath && article.path !== activePath.id) return false;
             if (!normalizedQuery) return true;
             const searchableContent = [article.title, article.author, ...(article.tags || [])].join(" ");

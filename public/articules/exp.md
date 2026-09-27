@@ -1,43 +1,65 @@
-# Experiencia personal
+# Mi experiencia profesional
 
-> Voy a hacer memoría año tras año y describir cuales fueron mis trabajos, metas, logros y avances. Con tanta experiencia, puedo compartir cosas que me llenaron mucho pero en esta sección trataré de resumir un poco los proyectos que participé y lo que aprendí de cada uno.
+> Este es un recorrido por los trabajos, desafíos y aprendizajes que fueron formando mi camino. No pretende ser un listado de puestos: quiero contar cómo fui encontrando mi lugar en tecnología, qué proyectos me marcaron y qué cosas aprendí de las personas con las que trabajé.
 
-## Actualidad Profesional
+## Hoy: trabajar en Mercado Libre
 
-Actualmente trabajo en **Mercado Libre** con el puesto de *Software Engineer*, trabajo para ellos desde noviembre de 2022. Mi tarea principal se basa en el análisis, diseño y programación en los sistemas de soporte al usuario de Mercado Libre. Usando tecnologías: MySQL, Git, Java,, Golang, NewRelic, Kibana.
+Actualmente trabajo en **Mercado Libre** como *Software Engineer*. Estoy en la empresa desde noviembre de 2022 y mi trabajo se centra en analizar, diseñar y programar sistemas de soporte al usuario. En el día a día uso tecnologías como MySQL, Git, Java, Golang, New Relic y Kibana.
 
-Durante estos años me he encontrado distintos desafíos, muchísima gente con muchísimo conocimiento, y me vi involucrado en proyectos que realmente me llevaron a otro nivel como desarrollador, en una empresa como la que es Mercado Libre.
+Llegar a una empresa de esta escala fue un cambio importante para mí. Me encontré con desafíos nuevos, gente con muchísimo conocimiento y proyectos que me hicieron crecer mucho como desarrollador. Entré como un integrante más del equipo, pero rápidamente empecé a participar de forma muy activa: coordinando proyectos, buscando soluciones a problemas complejos y acompañando a las personas nuevas o a quienes rotaban entre equipos. Con el tiempo, eso me permitió colaborar en tres equipos distintos y proponer iniciativas que ayudaron a resolver problemas compartidos por varios de ellos. Estoy muy agradecido por esas oportunidades.
 
-En la empresa entré como si fuera un desarrollador más, rápidamente me han visto muy participativo, coordinando proyectos, involucrándose activamente en soluciones de difícil resolución y capacitando a las personas nuevas o a las rotaciones del equipo. Esto me permitió ser miembro activo de tres equipos distintos y tener iniciativas propias que ayudaron a solucionar problemas de múltiples equipos. Como nota, estoy agradecido con estas oportunidades.
+### Customer Experience: conocer el negocio desde los sistemas
 
-El área para la cual desarrollé cosas es Customer Experience, básicamente, trabajar en los sistemas de la gente que da soporte a los clientes de Mercado Libre. En un principio solo fue el desarrollo del backend de una herramienta que permitiera a los Team Leaders de los representantes de Mercado Libre gestionar estados, tiempos de atención y visualización de información vital para el negocio. Luego, me involucré en el sistema que permite el alta, baja, modificación y personalización de la información de los representantes, la combinación de ambos sistemas me permitió tener una visión del negocio tan amplio que podía opinar sobre decisiones y sugerir mejoras o incluso cuestionar los cambios que se planteaban.
+Gran parte de mi recorrido en Mercado Libre estuvo ligado a **Customer Experience**, el área que trabaja con los sistemas que permiten dar soporte a los clientes.
 
-Además, por fuera de mi trabajo normal y por decisión propia, trabajé automatizando procesos rutinarios en la empresa: migraciones de datos, alertas en aplicaciones, monitores de estado. Con la intención de eliminar o reducir los trabajos administrativos, las fallas en los sistemas y la detección de potenciales vulnerabilidades. Esto me dio reconocimiento en el área CX IT y me abrió las puertas a colaborar en un equipo core del área donde trabajan seniors y expertos especializados en sus respectivas tecnologías.
+Al principio desarrollé el backend de una herramienta para que los *Team Leaders* de los representantes pudieran gestionar estados, tiempos de atención y visualizar información importante para el negocio. Más adelante me involucré en el sistema que permite dar de alta, baja, modificar y personalizar la información de esos representantes.
 
-Este equipo core se enfoca en la asignación de casos: básicamente cuando un usuario de Mercado Libre solicita hablar con un representante el sistema del equipo toma el caso, busca un representante para este usuario y permite la comunicación entre ambas partes. ¿Por qué es core? Simplemente porque sin este sistema nadie podría entablar una comunicación por ningún canal. 
+Trabajar sobre ambos sistemas me dio una visión mucho más amplia del negocio. No solo podía implementar cambios: también podía opinar sobre decisiones, proponer mejoras y cuestionar alternativas cuando entendía que había una forma más conveniente de resolverlas.
 
-Mi colaboración con este equipo se basó en la optimización del tiempo de respuesta, la revisión de los pull request, la definición de modelos de datos, infraestructura y ayudar en la gestión de proyectos. Esta experiencia fue un crecimiento brutal para mi, no solo por la oportunidad, sino también por la naturaleza del problema: un sistema con cientos de miles de RPS incluso las soluciones sencillas pueden no lograr procesar todo coordinadamente. Y por sobre todo, por la capacidad que tiene cada uno de mis compañeros, algunos especializados en golang, otros en bases de datos, otros en infraestructura, otros con muchísimo conocimiento en asincronismo, otros en testeo, otros del negocio. De todos pude aprender cosas y ponerlas en práctica.
+### Automatización y un equipo core
 
-Hoy en día, abril del 2025, me encuentro trabajando para el equipo de CX Phone. Este equipo se encarga de la gestión de llamadas del área de CX, de modo que toda comunicación telefónica que se realiza sea entrante o saliente (es decir, llama el cliente o lo llamamos nosotros) es gestionada por mi equipo. 
+Por fuera de mis tareas habituales, decidí automatizar varios procesos rutinarios: migraciones de datos, alertas en aplicaciones y monitores de estado. La intención era sencilla: reducir trabajo administrativo, anticipar fallas y detectar potenciales vulnerabilidades antes de que se convirtieran en un problema mayor.
 
-## Mi pasado profesional
+Ese trabajo me dio reconocimiento dentro de CX IT y me abrió la puerta para colaborar con un equipo core del área, formado por seniors y especialistas en sus tecnologías. El equipo se encarga de la asignación de casos: cuando un usuario de Mercado Libre pide hablar con un representante, el sistema recibe el caso, busca a la persona indicada y habilita la comunicación entre ambas partes. Es un sistema central porque, sin él, ningún canal podría conectar al cliente con un representante.
 
-Al principio de mi carrera profesional trabajé un año para un cliente que me contrató en forma de prácticas, esto me abrió las puertas a mis primeros sistemas profesionales. Luego trabajé 9 años en la consultora Softtek. De esto tengo poca documentación que me de exactamente el orden cronológico de las cosas, pero contaré todo lo más abarcativo posible.
+Mi aporte en ese equipo estuvo relacionado con optimizar tiempos de respuesta, revisar *pull requests*, definir modelos de datos e infraestructura y ayudar con la gestión de proyectos. Fue una experiencia de crecimiento muy fuerte, no solo por la oportunidad sino por la escala del problema: en un sistema con cientos de miles de RPS, incluso una solución aparentemente simple puede no alcanzar para procesar todo de forma coordinada.
 
-Dentro de la consultora me asignaron al equipo de compras de OSDE, se puede decir que oficialmente fue mi primer encuentro con una empresa realmente grande. Las tareas que se me asignaron fueron de testing: preparar el ambiente, realizar tests, documentar todo lo que iba viendo. 
+También aprendí mucho de mis compañeros: algunos son especialistas en Golang, otros en bases de datos, infraestructura, asincronismo, testing o negocio. Poder aprender de cada perspectiva y llevar ese conocimiento a la práctica es una de las cosas que más valoro de esta etapa.
 
-Al poco tiempo, y en mi inexperiencia con las tecnologías, pregunté en mi consultora si podría cambiar de cliente (debido a que sentía que en el equipo en el que me encontraba no estaba creciendo profesionalmente hablando).
+Al momento de escribir este artículo, en abril de 2025, formo parte del equipo de **CX Phone**. Allí trabajamos en la gestión de llamadas del área de Customer Experience, tanto entrantes como salientes: cada comunicación telefónica entre Mercado Libre y sus clientes pasa por sistemas de este equipo.
 
-Luego de un pequeño proceso de selección interna llegue al cliente Ternium Siderar, lugar donde realmente sentí mucho crecimiento profesional. Entré como DBA, mis tareas eran optimizar consultas, depurar las bases de datos, crear modelos de datos nuevos y mejores, realizar procesos de ETL de distintas fuentes y generar reportes o simplemente almacenarlo en bases de datos.
+## El comienzo: primeros pasos y Softtek
 
-Con el tiempo, y al ver mi performance, un lider del cliente consultó si podría ayudar a desarrolloar en un sistema: SIASSO (Sistema Integrado de Ambiente, Seguridad y. Salud Ocupacional). En él empecé mis pasos con C#, SQL, Javascript, Html y CSS. Además de UI/UX para mobile.
+Mi carrera profesional empezó con un año de prácticas para un cliente que me abrió la puerta a mis primeros sistemas reales. Después trabajé nueve años en la consultora **Softtek**. No tengo documentado cada detalle cronológico de ese período, pero sí tengo muy presentes los proyectos y las personas que me hicieron crecer.
 
-Durante 8 años estuve en el sistema SIASSO, donde no solo pude aprender tecnologías nuevas, sino que también desarrollé muchísimo mis habilidades blandas: analisis de requerimientos, manejar comunicaciones con gerentes, directores y operarios, diseño de soluciones innovadoras, propuestas de soluciones mobile. 
+Dentro de la consultora, mi primer destino fue el equipo de compras de **OSDE**. Fue mi primer contacto con una empresa grande y mis tareas estaban vinculadas al testing: preparar ambientes, realizar pruebas y documentar lo que encontraba. Fue una buena base, aunque en ese momento sentía que necesitaba acercarme más al desarrollo y a las tecnologías.
 
-Desglozando un poco más, con el analisís de requerimientos se basó en poder hablar con distintos roles para saber las problematicas en la planta, poder poner en palabras un poco más técnicas las necesidades y plantear a superiores soluciones y cómo impactaría cambios nuevos en los sistemas. Esto no solo me obligó a aprender a documentar, sino también a hablar con distintas personas responsables y generar propuestas de calidad basandome en fundamentos y no en suposiciones.
+Por eso consulté la posibilidad de cambiar de cliente. Tras un proceso de selección interno llegué a **Ternium Siderar**, un lugar en el que sentí un crecimiento profesional muy importante.
 
-Una pequeña lista de cósas de impacto que logré en Ternium:
-- Depuración de las bases de datos vía scripts (datos y su estructura, junto con stored procedures). Logrando que una tarea de más de 6 meses se realice en poco más de dos semanas ya que automaticé el proceso de detección de objetos inutilizados, marcandolos y generación de script para su eliminación.
-- Creación de una migración en las bases de datos que permitía cambiar la estructura organizacional sin impactar en las consultas. Esto no solo permitió hacer el cambio sin grandes refactorizaciones, sino que también permitió que en una segunda reestructuración no tuviera afectacción alguna. Se realizó modificando algunas consultas, generando vistas y funciones que se encargaban de devolver siempre la misma información independientemente la tabla origen que contenia la estructura organizacional.
-- El analisis de necesidad, el diseño del sistema, el desarrollo del mismo y la puesta en producción del módulo de Hora Segura Dirigida. Este fue mi proyecto más grande dentro de la empresa, con él los operarios tenían una forma de programar auditorias en la planta para prevenir accidentes en los operarios. Esto llevó las **muertes** de 4 anuales a ninguna, o simplemente lesiones. Además, en este proyecto se me encargó la capacitación de los operarios, supervisores, doctores, gerentes y directores de Ternium Brasil para el uso del sistema.
-- Realicé el boceto inicial de SIASSO Mobile, mostré una primera demo y logré conseguir el proyecto el cual pude desarrollar para tablets iOS. Esto impulsó el uso de SIASSO dentro de las plantas, logrando auditorías con mejor información, menos el uso de papel y accionar más rápido de los técnicos de Seguridad e Higiene.
+## Ternium: de las bases de datos al desarrollo de productos
+
+En Ternium entré como DBA. Mis tareas incluían optimizar consultas, depurar bases de datos, diseñar modelos de datos nuevos, realizar procesos de ETL desde distintas fuentes y generar reportes o persistir información para que otros sistemas pudieran usarla.
+
+Con el tiempo, al ver mi desempeño, un líder del cliente me preguntó si podía ayudar a desarrollar un sistema llamado **SIASSO** (*Sistema Integrado de Ambiente, Seguridad y Salud Ocupacional*). Ahí empecé a dar mis primeros pasos más profundos con C#, SQL, JavaScript, HTML y CSS, además de trabajar en propuestas de UI/UX para dispositivos móviles.
+
+Durante ocho años estuve vinculado a SIASSO. No solo incorporé tecnologías nuevas: también desarrollé habilidades que hoy considero fundamentales. Aprendí a analizar requerimientos, comunicarme con gerentes, directores y operarios, diseñar soluciones innovadoras y proponer mejoras que tuvieran sentido para quienes realmente usaban el sistema.
+
+El análisis de requerimientos, en particular, me enseñó a escuchar a roles muy distintos, entender los problemas de una planta y traducir necesidades operativas a propuestas técnicas. Eso me obligó a documentar mejor, a sostener ideas con fundamentos y no solo con intuiciones, y a presentar soluciones de calidad a las personas responsables de tomar decisiones.
+
+## Proyectos que me marcaron en Ternium
+
+Hay algunos trabajos de esa etapa que recuerdo especialmente por el impacto que tuvieron y por todo lo que me enseñaron.
+
+- **Depuración automatizada de bases de datos.** Preparé scripts para detectar objetos sin uso, marcarlos y generar los scripts necesarios para eliminarlos. Una tarea que podía llevar más de seis meses se resolvió en poco más de dos semanas gracias a la automatización.
+
+- **Migración de la estructura organizacional.** Diseñé una migración que permitía cambiar la estructura organizacional sin romper las consultas existentes. Se ajustaron consultas y se generaron vistas y funciones que devolvían siempre la misma información, sin importar qué tabla fuera el origen. Eso evitó grandes refactorizaciones en el primer cambio y permitió atravesar una segunda reestructuración sin impacto.
+
+- **Hora Segura Dirigida.** Este fue mi proyecto más grande dentro de la empresa. Participé en el análisis de la necesidad, el diseño, el desarrollo y la puesta en producción de un módulo con el que los operarios podían programar auditorías en planta para prevenir accidentes. Además, tuve a cargo la capacitación de operarios, supervisores, doctores, gerentes y directores de Ternium Brasil para usarlo. Fue especialmente significativo ver cómo una herramienta podía fortalecer la prevención: en ese período se pasó de registrar cuatro muertes anuales a no registrar nuevas muertes, aunque el trabajo para reducir lesiones continuó.
+
+- **SIASSO Mobile.** Realicé el boceto inicial, presenté una primera demo y conseguí impulsar el proyecto, que luego desarrollé para tablets iOS. Esto facilitó que las auditorías se realizaran con mejor información, menos papel y una capacidad de respuesta más rápida para los equipos de Seguridad e Higiene.
+
+## Lo que me llevo de este camino
+
+Mirando hacia atrás, veo un recorrido que fue desde testing y bases de datos hasta el desarrollo de sistemas, el diseño de soluciones y la colaboración con equipos de negocio y tecnología. Cada etapa me ayudó a entender que construir software no es solo escribir código: también es escuchar, hacer buenas preguntas, cuidar la operación y trabajar con otras personas para resolver problemas reales.
+
+Esas experiencias son las que hoy intento llevar a cada proyecto: curiosidad técnica, atención a los detalles, ganas de automatizar lo repetitivo y la convicción de que las mejores soluciones aparecen cuando se entiende tanto el sistema como a las personas que lo usan.
