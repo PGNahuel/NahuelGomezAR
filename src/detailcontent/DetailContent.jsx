@@ -1,5 +1,6 @@
 import React, { useMemo, useRef } from "react";
 import ReadingProgress from "./ReadingProgress";
+import ArticlePromoBanner from "./ArticlePromoBanner";
 import useArticleContent from "./hooks/useArticleContent";
 import useMermaidDiagrams from "./hooks/useMermaidDiagrams";
 import useReadingProgress from "./hooks/useReadingProgress";
@@ -74,6 +75,7 @@ export default function DetailContent({ Id, Articulo, onOpenSiteNavigation }) {
                 </div>
                 <a href="/" className="volverBtn btn">Volver</a>
             </div>
+            <ArticlePromoBanner articleId={Id} />
         </>
     );
 }

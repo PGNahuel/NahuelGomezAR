@@ -1,0 +1,22 @@
+[
+  {
+    "id": "articulo-observabilidad",
+    "title": "Entendé mejor tus sistemas",
+    "description": "Leé la introducción práctica a observabilidad.",
+    "url": "/articulos/observability/",
+    "image": "/img/img-observability.webp",
+    "weight": 25,
+    "disabled": true,
+    "external": false
+  },
+  {
+    "id": "libro-codigo-del-alma",
+    "title": "Código del alma",
+    "description": "Conocé la historia detrás de mi libro.",
+    "url": "/articulos/mi-libro/",
+    "image": "/img/img-news.webp",
+    "weight": 25,
+    "disabled": true,
+    "external": false
+  }
+]

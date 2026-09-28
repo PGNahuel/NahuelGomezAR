@@ -456,6 +456,45 @@ body{
 	padding:5px 10px;
 }
 
+/* Un único espacio promocional reutilizable para todos los artículos. */
+.promo-banner {
+    position: fixed;
+    z-index: 30;
+    right: 0;
+    bottom: 0;
+    left: 280px;
+    padding: 0;
+    background-color: var(--color-primary);
+    background-image: linear-gradient(90deg, rgb(0 25 40 / .92), rgb(0 55 75 / .72)), var(--promo-image);
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 -3px 12px var(--color-shadow);
+    text-align: left;
+}
+
+.promo-banner__link { display: flex; align-items: center; gap: 14px; width: 100%; padding: 14px 50px 14px 16px; color: #ffffff; }
+.promo-banner__link:hover { color: #ffffff; text-decoration: none; background: rgb(0 0 0 / .12); }
+.promo-banner__label { color: #aee7ff; font-size: .7rem; font-weight: bold; letter-spacing: .08em; }
+.promo-banner strong { display: block; color: #ffffff; }
+.promo-banner__description { display: block; margin-top: 2px; font-size: .85rem; }
+.promo-banner__close { position: absolute; top: 10px; right: 12px; padding: 0 4px; border: 0; color: #ffffff; background: transparent; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.promo-banner__close:hover { color: #aee7ff; }
+.promo-banner__restore { position: fixed; z-index: 30; bottom: 0; left: 280px; padding: 5px 10px; border: 0px solid var(--color-border); border-bottom: 0; border-radius: 4px 4px 0 0; color: var(--color-text-muted); background: var(--color-surface-alt); font-size: .72rem; cursor: pointer; }
+.promo-banner__restore:hover { color: var(--color-primary); }
+
+/* Reserva espacio al final para que la franja fija no cubra las acciones. */
+.maincontent:has(~ .promo-banner) { padding-bottom: 150px; }
+
+@media (max-width: 991px) {
+    .promo-banner { left: 0; }
+    .promo-banner__link { align-items: flex-start; flex-wrap: wrap; }
+    .promo-banner__restore { left: 12px; }
+}
+
+@media (min-width: 992px) {
+    .maincontent:has(~ .promo-banner) { padding-bottom: 95px; }
+}
+
 .reading-progress {
     margin: 0 0 18px;
     padding: 10px 12px;
