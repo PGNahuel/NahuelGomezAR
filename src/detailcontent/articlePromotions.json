@@ -10,13 +10,13 @@
     "external": false
   },
   {
-    "id": "libro-codigo-del-alma",
-    "title": "Código del alma",
-    "description": "Conocé la historia detrás de mi libro.",
-    "url": "/articulos/mi-libro/",
-    "image": "/img/img-news.webp",
+    "id": "share-it-nerdearla2026",
+    "title": "¡Share it en Nerdearla 2026!",
+    "description": "Conoce la comunidad en la que participo, donde nadie despega solo y todos compartimos conocimiento, gustos por la tecnología y la pasión por aprender.",
+    "url": "/landing/shareit/nerdearla2026.html",
+    "image": "/landing/shareit/assets/nerdearlalogo.webp",
     "weight": 25,
-    "disabled": true,
+    "disabled": false,
     "external": false
   }
 ]
