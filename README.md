@@ -9,6 +9,21 @@ npm install
 npm run dev
 ```
 
+## Comprobar el fallback de iOS
+
+En Safari para iPhone/iPad el sitio reemplaza sus capas `position: fixed` por
+capas absolutas sincronizadas con `visualViewport`. Para probar exactamente esa
+ruta sin tener un dispositivo Apple, abrir cualquier página local con
+`?ios-fixed-fallback=1`, por ejemplo:
+
+```text
+http://localhost:5173/articulos/observability/?ios-fixed-fallback=1
+```
+
+Desplazar el artículo, abrir/cerrar ambos menús móviles, y comprobar el banner
+destacado, el indicador de lectura y el botón «Volver». Probar además rotación y
+el teclado en un iPhone/iPad real: todos deben permanecer anclados al viewport.
+
 ## Publicación
 
 ```sh

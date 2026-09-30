@@ -34,16 +34,18 @@ export default function ArticleNavigation({ headings, onOpenSiteNavigation }) {
     };
 
     return (
-        <aside className={`article-navigation${isOpen ? " show" : ""}`} aria-label="Índice del artículo">
+        <>
             <button
-                className="article-navigation__toggle"
+                className={`article-navigation__toggle${isOpen ? " show" : ""}`}
                 type="button"
+                aria-controls="article-navigation"
                 aria-label="Mostrar índice del artículo"
                 aria-expanded={isOpen}
                 onClick={() => setIsOpen((open) => !open)}
             >
                 <i className="fas fa-list" aria-hidden="true" />
             </button>
+            <aside id="article-navigation" className={`article-navigation${isOpen ? " show" : ""}`} aria-label="Índice del artículo">
             <div className="article-navigation__content">
                 <div className="article-navigation__header">
                     <h2>En este artículo</h2>
@@ -67,6 +69,7 @@ export default function ArticleNavigation({ headings, onOpenSiteNavigation }) {
                     </ol>
                 </nav>
             </div>
-        </aside>
+            </aside>
+        </>
     );
 }

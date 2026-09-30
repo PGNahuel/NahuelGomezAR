@@ -8,6 +8,7 @@ import PanelContact from './contact/panelContact';
 import MainContent from './maincontent/maincontent';
 import ProfileContent from './profile/ProfileContent';
 import { articlePath, profilePath } from './articlePaths';
+import useIosFixedFallback from "./hooks/useIosFixedFallback";
 
 function HomePage() {
   const [selectedPath, setSelectedPath] = useState(null);
@@ -34,6 +35,7 @@ function ArticleDetailPage({ id, initialArticle, onOpenSiteNavigation }) {
 }
 
 export function AppContent({ initialArticle = null }) {
+  useIosFixedFallback();
   const [isSiteNavigationOpen, setIsSiteNavigationOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();

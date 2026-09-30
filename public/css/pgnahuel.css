@@ -718,10 +718,37 @@ body{
         background: rgb(0 102 153 / 0.80);
         color: var(--color-on-primary);
         font-size: 1.2rem;
+        z-index: 1001;
     }
 
-    .article-navigation.show .article-navigation__toggle { left: 280px; }
+    .article-navigation__toggle.show { left: 280px; }
     .article-navigation__content { padding-top: 76px; }
+}
+
+/* iOS fallback: JS positions these document layers against visualViewport. */
+html.ios-fixed-fallback #tm-sidebar,
+html.ios-fixed-fallback .tm-sidebar .navbar-toggler,
+html.ios-fixed-fallback .article-navigation,
+html.ios-fixed-fallback .article-navigation__toggle,
+html.ios-fixed-fallback .volverBtn,
+html.ios-fixed-fallback .promo-banner,
+html.ios-fixed-fallback .promo-banner__restore,
+html.ios-fixed-fallback .reading-progress-wrapper.is-pinned .reading-progress {
+    position: absolute !important;
+    top: var(--ios-fixed-top, 0px) !important;
+    bottom: auto !important;
+}
+
+html.ios-fixed-fallback #tm-sidebar,
+html.ios-fixed-fallback .article-navigation {
+    height: var(--ios-fixed-height, 100vh) !important;
+}
+
+@media (max-width: 991px) {
+    /* Fixed descendants formerly ignored their off-canvas parent. */
+    html.ios-fixed-fallback .tm-sidebar .navbar-toggler {
+        left: 280px;
+    }
 }
 
 blockquote p{
